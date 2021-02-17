@@ -16,7 +16,6 @@ router.post("/api/burger", function(req, res) {
 });
 
 router.put("/api/burger/:id", function(req, res) {
-    
     burger.updateOne(req.params.id, result => {
         if (result.changedRows === 0) {
             return res.status(404).end();
@@ -24,3 +23,5 @@ router.put("/api/burger/:id", function(req, res) {
         res.status(200).end();
     });
 });
+
+module.exports = router;
